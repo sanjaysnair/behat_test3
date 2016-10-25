@@ -1,0 +1,28 @@
+# behat.yml
+default: 
+  extensions: 
+    Behat\MinkExtension: 
+      base_url: "https://www.wikipedia.org"
+      default_session: selenium_firefox_session
+      goutte: ~
+      sessions: 
+        goutte_session: 
+          goutte: 
+            guzzle_parameters: 
+              ssl.certificate_authority: false
+        selenium_chrome_session: 
+          selenium2: 
+            browser: chrome
+        selenium_firefox_session: 
+          selenium2: 
+            browser: firefox
+chrome: 
+  extensions: 
+    Behat\MinkExtension: 
+      default_session: selenium_chrome_session
+
+firefox: 
+  extensions: 
+    Behat\MinkExtension: 
+      default_session: selenium_firefox_session
+
